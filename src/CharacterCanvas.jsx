@@ -53,12 +53,12 @@ export default function CharacterCanvas() {
     const s = state.current;
 
     const ci = new Image();
-    ci.src = '/center.webp';
+    ci.src = `${import.meta.env.BASE_URL}center.webp`;
     s.centerImg = ci;
 
     s.frames = Array.from({ length: TOTAL_FRAMES }, (_, i) => {
       const img = new Image();
-      img.src = `/frames/frame_${String(i).padStart(2, '0')}.webp`;
+      img.src = `${import.meta.env.BASE_URL}frames/frame_${String(i).padStart(2, '0')}.webp`;
       return img;
     });
   }, []);
